@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace listas_doblementeenlazadas_circulares
 {
-    internal class NodoCanal
+    internal class NodoCanal //Clase
     {
         public string Nombre { get; set; }
         public string UrlStream { get; set; } // El dato ahora es la URL

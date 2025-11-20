@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace listas_doblementeenlazadas_circulares
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form //clase
     {
-        private ListaSimpleEnlazadaCanales galeriaCanales;
-        public Form1()
+        private ListaSimpleEnlazadaCanales galeriaCanales; //atributo
+        public Form1() // Constructor
         {
             InitializeComponent();
             InicializarCanales();
@@ -26,7 +26,6 @@ namespace listas_doblementeenlazadas_circulares
             galeriaCanales.AgregarCanal("Canal 1",
                 @"C:\Users\linsy\OneDrive\Documents\Q3-2025\Estructura de datos\VideosMP4\6162038-hd_1080_1920_30fps.mp4");
 
-            // Ruta local: NO uses \" en @"
             galeriaCanales.AgregarCanal("Canal 2",
                 @"C:\Users\linsy\OneDrive\Documents\Q3-2025\Estructura de datos\VideosMP4\856985-hd_1920_1080_30fps.mp4");
 
@@ -53,16 +52,16 @@ namespace listas_doblementeenlazadas_circulares
         {
             if (canal != null)
             {
-                // 1. Mostrar el nombre del canal
+                // Mostrar el nombre del canal
                 lblNombreCa.Text = canal.Nombre;
 
-                // 2. Cargar y reproducir el stream en el AxWindowsMediaPlayer
+                // Cargar y reproducir el stream 
                 axWindowsMediaPlayer1.URL = canal.UrlStream;
             }
             else
             {
-                lblNombreCa.Text = "FIN DE LA LISTA DE CANALES";
-                axWindowsMediaPlayer1.URL = string.Empty; // Detener la reproducción
+                lblNombreCa.Text = "Final de los canales";
+                axWindowsMediaPlayer1.URL = string.Empty; // Detener la reproduccion
             }
         }
 
@@ -72,7 +71,9 @@ namespace listas_doblementeenlazadas_circulares
             ReproducirCanal(canalSiguiente);
         }
 
-        private void btnReinicia_Click_1(object sender, EventArgs e)
+        //--------------------------------------------------------------------
+
+        private void btnReinicia_Click_1(object sender, EventArgs e) //reinicia
         {
             // Vuelve al primer nodo y actualiza la visualizacion
             galeriaCanales.Reiniciar();
@@ -84,7 +85,7 @@ namespace listas_doblementeenlazadas_circulares
 
         }
 
-        private void btnAnterior_Click(object sender, EventArgs e)
+        private void btnAnterior_Click(object sender, EventArgs e) //canal anterior
         {
             NodoCanal canalAnterior = galeriaCanales.ObtenerAnteriorCanal();
             ReproducirCanal(canalAnterior);

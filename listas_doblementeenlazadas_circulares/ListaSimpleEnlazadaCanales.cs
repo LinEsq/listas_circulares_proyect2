@@ -8,7 +8,7 @@ namespace listas_doblementeenlazadas_circulares
 {
     internal class ListaSimpleEnlazadaCanales
     {
-        private NodoCanal Cabeza { get; set; }
+        private NodoCanal Cabeza { get; set; } // atributos
         private NodoCanal actual;
 
         public ListaSimpleEnlazadaCanales()
@@ -21,7 +21,7 @@ namespace listas_doblementeenlazadas_circulares
         {
             NodoCanal nuevo = new NodoCanal(nombre, url);
 
-            if (Cabeza == null)
+            if (Cabeza == null) //lista vacia
             {
                 Cabeza = nuevo;
                 Cabeza.Siguiente = Cabeza;
@@ -30,7 +30,7 @@ namespace listas_doblementeenlazadas_circulares
             }
             else
             {
-                NodoCanal ultimo = Cabeza.Anterior;
+                NodoCanal ultimo = Cabeza.Anterior; //funcion - lista que no esta vacia
 
                 // Enlazar por el final
                 ultimo.Siguiente = nuevo;
@@ -42,7 +42,7 @@ namespace listas_doblementeenlazadas_circulares
             }
         }
 
-        public NodoCanal ObtenerSiguienteCanal()
+        public NodoCanal ObtenerSiguienteCanal() //funcion de pasar de canales
         {
             actual = actual.Siguiente;
             return actual;
